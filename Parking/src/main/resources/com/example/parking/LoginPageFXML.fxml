@@ -8,52 +8,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="873.0" styleClass="anchor-pane-background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parking.gui.LoginPageController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="873.0" styleClass="anchor-pane-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parking.gui.LoginPageController">
     <children>
-      <Pane layoutX="292.0" layoutY="99.0" prefHeight="303.0" prefWidth="262.0">
-         <children>
-              <Hyperlink layoutX="180.0" layoutY="219.0" text="Sign up">
-                  <font>
-                      <Font name="Times New Roman Bold" size="14.0" />
-                  </font>
-              </Hyperlink>
-            <VBox layoutX="54.0" layoutY="38.0" prefHeight="174.0" prefWidth="182.0" spacing="20.0">
-               <children>
-                  <VBox prefHeight="82.0" prefWidth="204.0" spacing="3.0">
-                     <children>
-                          <Label text="Username:">
-                              <font>
-                                  <Font name="SansSerif Bold Italic" size="23.0" />
-                              </font>
-                          </Label>
-                          <TextField prefHeight="52.0" prefWidth="207.0" styleClass="textarea" />
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="58.0" prefWidth="182.0" spacing="3.0">
-                     <children>
-                          <Label text=" Password:">
-                              <font>
-                                  <Font name="SansSerif Bold Italic" size="23.0" />
-                              </font>
-                          </Label>
-                          <PasswordField prefHeight="26.0" prefWidth="220.0" styleClass="textarea" />
-                     </children>
-                  </VBox>
-               </children>
-            </VBox>
-         </children>
-      </Pane>
-        <Label fx:id="login_label" alignment="CENTER" layoutX="366.0" layoutY="36.0" prefHeight="46.0" prefWidth="114.0" text="Login">
-            <font>
-                <Font name="Segoe Script Bold" size="96.0" />
-            </font>
+        <Label id="login_label" alignment="CENTER" contentDisplay="CENTER" layoutX="302.0" layoutY="41.0" stylesheets="@style.css" text="Login" textAlignment="CENTER" AnchorPane.leftAnchor="302.0" AnchorPane.rightAnchor="320.20000000000005">
         </Label>
-        <Button alignment="CENTER" layoutX="305.0" layoutY="450.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="262.0" styleClass="buttonEff" text="Log in" textOverrun="CLIP">
-            <font>
-                <Font name="SansSerif Bold Italic" size="29.0" />
-            </font>
+        <Pane layoutX="268.0" layoutY="163.0" prefHeight="277.0" prefWidth="336.0" styleClass="formBlock" stylesheets="@style.css">
+            <children>
+                <VBox layoutX="18.0" layoutY="14.0" prefHeight="190.0" prefWidth="300.0" stylesheets="@style.css">
+                    <children>
+                        <VBox styleClass="EntryBox_login" stylesheets="@style.css">
+                            <children>
+                                <Label id="headings_login" stylesheets="@style.css" text="Username:">
+                                </Label>
+                                <TextField fx:id="usernameField" styleClass="Login_textarea" stylesheets="@style.css" />
+                            </children>
+                        </VBox>
+                        <VBox styleClass="EntryBox_login" stylesheets="@style.css">
+                            <children>
+                                <Label id="headings_login" stylesheets="@style.css" text=" Password:">
+                                </Label>
+                                <PasswordField fx:id="passwordField" styleClass="Login_textarea" stylesheets="@style.css" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+                <Hyperlink id="sign-up" fx:id="signUpLink" layoutX="245.0" layoutY="212.0" onAction="#goToSignUpPage" stylesheets="@style.css" text="Sign up">
+                </Hyperlink>
+            </children>
+        </Pane>
+        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButton" styleClass="buttonEff" stylesheets="@style.css" text="Login" textOverrun="CLIP">
         </Button>
     </children>
 </AnchorPane>

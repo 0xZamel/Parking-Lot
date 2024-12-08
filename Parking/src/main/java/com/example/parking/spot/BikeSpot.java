@@ -4,7 +4,7 @@ import com.example.parking.VehicleType;
 
 public class BikeSpot extends Spot{
     public  BikeSpot(int id, double hourRate){
-        super(id,hourRate);
+        super(id, BIKE_HOUR_RATE);
     }
 
     @Override

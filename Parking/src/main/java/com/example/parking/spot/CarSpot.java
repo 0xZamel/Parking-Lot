@@ -3,8 +3,8 @@ package com.example.parking.spot;
 import com.example.parking.VehicleType;
 
 public class CarSpot extends Spot {
-    public CarSpot(int id, double hourRate) {
-        super(id, hourRate);
+    public CarSpot(int id) {
+        super(id, CAR_HOUR_RATE);
     }
 
     @Override

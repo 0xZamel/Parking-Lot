@@ -3,11 +3,12 @@ import java.time.LocalDateTime;
 import java.time.Duration;
 
 public class Slot {
-    private int slotID, spotID;
-    private LocalDateTime startDate,endDate; // 2024-12-07T14:30:00 --> yyyy-MM-dd'T'HH:mm:ss
-    private int hours;
+    private final int slotID, spotID;
+    private LocalDateTime startDate, endDate; // 2024-12-07T14:30:00 --> yyyy-MM-dd'T'HH:mm:ss
+    private final int hours;
     private boolean isAvailable;
-    public Slot(int spotID, LocalDateTime startDate, LocalDateTime endDate) {
+    public Slot(int slotID , int spotID, LocalDateTime startDate, LocalDateTime endDate) {
+        this.slotID = slotID;
         this.spotID = spotID;
         this.startDate = startDate;
         this.endDate = endDate;

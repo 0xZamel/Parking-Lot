@@ -11,73 +11,65 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="939.0" styleClass="anchor-pane-background" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parking.gui.SignUpPageController">
+<AnchorPane prefHeight="700.0" prefWidth="939.0" styleClass="anchor-pane-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parking.gui.SignUpPageController">
     <children>
-        <!-- Header -->
-        <Label alignment="CENTER" layoutX="401.0" layoutY="20.0" prefHeight="58.0" prefWidth="143.0" text="SignUp">
-            <font>
-                <Font size="35.0" />
-            </font>
+        <Label id="signUp_label" stylesheets="@style.css" text="SignUp">
         </Label>
-
-        <!-- Main Content -->
-        <VBox layoutX="279.0" layoutY="102.0" prefHeight="550.0" prefWidth="403.0" spacing="10">
+        <Pane layoutX="233.0" layoutY="110.0" prefHeight="460.0" prefWidth="480.0" styleClass="formBlock" stylesheets="@style.css" AnchorPane.leftAnchor="233.0" AnchorPane.rightAnchor="234.20000000000005">
             <children>
-                <!-- Username Section -->
-                <VBox prefHeight="81.0" prefWidth="414.0" spacing="5">
+                <VBox layoutX="18.0" layoutY="21.0" prefHeight="416.0" prefWidth="435.0" spacing="10.0" stylesheets="@style.css">
                     <children>
-                        <Label text="Username" />
-                        <TextField fx:id="usernameField" promptText="Username" />
+                        <VBox prefHeight="50.0" prefWidth="150.0" styleClass="EntryBox_signUp" stylesheets="@style.css">
+                            <children>
+                                <Label id="headings_signUp" stylesheets="@style.css" text="Username" />
+                                <TextField fx:id="usernameField" prefHeight="20.0" prefWidth="250.0" promptText="Username" styleClass="signUp_textarea" stylesheets="@style.css" />
+                            </children>
+                        </VBox>
+                        <VBox styleClass="EntryBox_signUp" stylesheets="@style.css">
+                            <children>
+                                <Label id="headings_signUp" stylesheets="@style.css" text="Password" />
+                                <PasswordField fx:id="passwordField" promptText="Password" styleClass="signUp_textarea" stylesheets="@style.css" />
+                            </children>
+                        </VBox>
+                        <VBox styleClass="EntryBox_signUp" stylesheets="@style.css">
+                            <children>
+                                <Label id="headings_signUp" stylesheets="@style.css" text="License Number:" />
+                                <TextField fx:id="licenseNumberField" promptText="License Number" styleClass="signUp_textarea" stylesheets="@style.css" />
+                            </children>
+                        </VBox>
+                        <VBox prefWidth="150.0" spacing="2.0" stylesheets="@style.css">
+                            <children>
+                                <Label id="headings_signUp" stylesheets="@style.css" text="Add Vehicle" />
+                                <HBox spacing="10" stylesheets="@style.css">
+                                    <ComboBox id="vehicleTypeComboBox" fx:id="vehicleTypeComboBox" promptText="Select Vehicle Type">
+                                        <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                                <String fx:value="Car" />
+                                                <String fx:value="Truck" />
+                                                <String fx:value="Bike" />
+                                            </FXCollections>
+                                        </items>
+                                    </ComboBox>
+                                    <TextField id="licensePlateField" fx:id="licensePlateField" promptText="Enter License Plate" />
+                                    <Button id="addVehicleBtn" onAction="#handleAddVehicle" text="Add Vehicle" />
+                                </HBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0" stylesheets="@style.css">
+                                    <children>
+                                        <Label id="headings_signUp" stylesheets="@style.css" text="Vehicles List" />
+                                        <ListView id="vehicleListView" fx:id="vehicleListView" prefHeight="77.0" prefWidth="435.0" stylesheets="@style.css" />
+                                    </children>
+                                </VBox>
+                                <Button id="removeVehicleBtn" onAction="#handleRemoveVehicle" stylesheets="@style.css" text="Remove Selected Vehicle" />
+                                <Hyperlink fx:id="loginLink" onAction="#goToLoginPage" stylesheets="@style.css" text="Already have an account?" />
+                            </children>
+                        </VBox>
                     </children>
                 </VBox>
-
-                <!-- Password Section -->
-                <VBox prefHeight="82.0" prefWidth="239.0" spacing="5">
-                    <children>
-                        <Label text="Password" />
-                        <PasswordField fx:id="passwordField" promptText="Password" />
-                    </children>
-                </VBox>
-
-                <!-- License Number Section -->
-                <VBox prefHeight="82.0" prefWidth="323.0" spacing="5">
-                    <children>
-                        <Label text="License Number:" />
-                        <TextField fx:id="licenseNumberField" promptText="License Number" />
-                    </children>
-                </VBox>
-
-                <!-- Vehicle Selection Section -->
-                <VBox prefHeight="262.0" prefWidth="403.0" spacing="10">
-                    <children>
-                        <!-- Vehicle Type and License Plate -->
-                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Add Vehicle" />
-                        <HBox spacing="10">
-                            <ComboBox fx:id="vehicleTypeComboBox" promptText="Select Vehicle Type">
-                                <items>
-                                    <FXCollections fx:factory="observableArrayList">
-                                        <String fx:value="Car" />
-                                        <String fx:value="Truck" />
-                                        <String fx:value="Bike" />
-                                    </FXCollections>
-                                </items>
-                            </ComboBox>
-                            <TextField fx:id="licensePlateField" promptText="Enter License Plate" />
-                            <Button onAction="#handleAddVehicle" text="Add Vehicle" />
-                        </HBox>
-
-                        <!-- Vehicle List -->
-                        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Vehicles List" />
-                        <ListView fx:id="vehicleListView" prefHeight="82.0" prefWidth="403.0" />
-                        <Button onAction="#handleRemoveVehicle" text="Remove Selected Vehicle" />
-                        <Hyperlink fx:id="loginLink" text="Hyperlink" />
-                    </children>
-                </VBox>
-                <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#signUpButtonClicked" text="SignUp" />
             </children>
-        </VBox>
+        </Pane>
+        <Button id="signUpButton" fx:id="signUpButton" layoutX="33.0" layoutY="110.0" mnemonicParsing="false" onAction="#signUpButtonClicked" styleClass="buttonEff" stylesheets="@style.css" text="SignUp" />
     </children>
 </AnchorPane>

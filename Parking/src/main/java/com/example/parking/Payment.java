@@ -3,7 +3,7 @@ import com.example.parking.spot.Spot;
 import java.util.*;
 
 public class Payment {
-    private int ownerID;
+    private final int ownerID;
     private double balance, penalty;
     // Example data: total hours for each VehicleType
     EnumMap<VehicleType, Integer> totalHours;
@@ -15,6 +15,7 @@ public class Payment {
         this.ownerID = ownerID;
         this.balance = balance;
 
+        this.penalty = 0;
         totalHours = new EnumMap<>(VehicleType.class);
         for (VehicleType type : VehicleType.values()) {
             totalHours.put(type, 0);
@@ -63,17 +64,18 @@ public class Payment {
         return reservationBaseAmount(spotID, slotID) + getPenalty();
     }
 
-    public void confirmReservation(int spotID, int slotID) {
-        Spot spot = SystemManager.getSpot(spotID);
-        Slot slot = spot.getSlot(slotID);
-        double amount = reservationTotalAmount(spotID, slotID);
+    public void confirmReservation(Reservation reservation) {
+        Spot spot = SystemManager.getSpot(reservation.getSpotID());
+        Slot slot = reservation.getSlot();
 
+        double amount = reservation.getTotalAmount();
+
+        // Update Data
         int lastHours = (getTotalHours(spot.getSpotType()) + slot.getHours()) % REWARD_HOURS;
         setTotalHours(spot.getSpotType(), lastHours);
         withdraw(amount);
         resetPenalty();
     }
-
     public void cancelReservation(Reservation reservation) {
         Spot spot = SystemManager.getSpot(reservation.getSpotID());
         Slot slot = reservation.getSlot();
@@ -81,7 +83,7 @@ public class Payment {
         int lastHours = ((getTotalHours(spot.getSpotType()) % REWARD_HOURS) - (slot.getHours() % REWARD_HOURS) + REWARD_HOURS) % REWARD_HOURS;
         setTotalHours(spot.getSpotType(), lastHours);
 
-        deposit(reservation.getTotalAmount());
+        deposit(reservation.getBaseAmount());
         addPenalty(PENALTY_AMOUNT);
     }
 }

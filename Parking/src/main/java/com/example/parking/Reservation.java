@@ -8,8 +8,8 @@ public class Reservation {
     private LocalDateTime cancelReservationDate;
     private boolean status;
 
-    public Reservation(int resID, int ownerID, int spotID, Slot slot, int baseAmount, int totalAmount) {
-        this.reservationID = resID;
+    public Reservation(int reservationID, int ownerID, Slot slot, int baseAmount, int totalAmount) {
+        this.reservationID = reservationID;
         this.ownerID = ownerID;
         this.slot = slot;
         this.status = true;

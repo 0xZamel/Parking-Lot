@@ -2,8 +2,8 @@ package com.example.parking;
 import java.util.regex.Pattern;
 
 class Vehicle {
-    private VehicleType Type;
-    private String licensePlate;
+    private final VehicleType Type;
+    private final String licensePlate;
     public Vehicle(VehicleType Type, String licensePlate) {
         this.Type = Type;
         this.licensePlate = licensePlate;
