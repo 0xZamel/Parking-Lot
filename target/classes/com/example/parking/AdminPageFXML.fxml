@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -22,8 +21,9 @@
       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <VBox alignment="CENTER" prefHeight="633.0" prefWidth="160.0" spacing="70.0" styleClass="buttons" stylesheets="@adminStyle.css">
+      <VBox alignment="TOP_CENTER" prefHeight="633.0" prefWidth="160.0" spacing="50.0" styleClass="buttons" stylesheets="@adminStyle.css">
          <children>
+            <Pane prefHeight="72.0" prefWidth="181.0" styleClass="logo" stylesheets="@adminStyle.css" />
                 <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" styleClass="btn" stylesheets="@adminStyle.css" text="HOME" />
                 <Button mnemonicParsing="false" styleClass="btn" stylesheets="@adminStyle.css" text="OWNERS" />
                 <Button mnemonicParsing="false" styleClass="btn" stylesheets="@adminStyle.css" text="SPOTS" />
@@ -34,26 +34,30 @@
             <Insets top="15.0" />
          </padding>
       </VBox>
-      <SplitPane dividerPositions="0.12389100126742712" orientation="VERTICAL" prefHeight="567.0" prefWidth="627.0" GridPane.columnIndex="1">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="70.0" prefWidth="783.0">
+      <VBox prefHeight="200.0" prefWidth="100.0" stylesheets="@adminStyle.css" GridPane.columnIndex="1">
+         <children>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="70.0" prefWidth="783.0" styleClass="headerPane" stylesheets="@adminStyle.css">
                <children>
-                      <Label alignment="CENTER" layoutX="1.0" layoutY="5.0" prefHeight="66.0" prefWidth="649.0" styleClass="WelcomeText" stylesheets="@adminStyle.css" text="Welcome To Admin Dashboard" />
+                      <Label alignment="CENTER" layoutX="83.0" layoutY="5.0" prefHeight="66.0" prefWidth="568.0" styleClass="WelcomeText" stylesheets="@adminStyle.css" text="Welcome To Admin Dashboard" />
                       <Button layoutX="660.0" layoutY="19.0" mnemonicParsing="false" styleClass="Logout-btn" stylesheets="@adminStyle.css" text="LOGOUT" />
                </children>
             </AnchorPane>
-            <StackPane>
+            <StackPane prefHeight="549.0" prefWidth="758.0" styleClass="stack" stylesheets="@adminStyle.css">
                <children>
-                  <Pane prefHeight="417.0" prefWidth="633.0" styleClass="Spots" stylesheets="@adminStyle.css">
+                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="homeStack" stylesheets="@adminStyle.css" />
+                  <Pane prefHeight="417.0" prefWidth="633.0" styleClass="SpotStack" stylesheets="@adminStyle.css" visible="false">
                      <children>
-                            <Pane id="car" layoutX="1.0" layoutY="67.0" prefHeight="367.0" prefWidth="250.0" styleClass="vehicleType" stylesheets="@adminStyle.css" />
-                            <Pane id="bike" layoutX="235.0" layoutY="61.0" prefHeight="382.0" prefWidth="250.0" styleClass="vehicleType" stylesheets="@adminStyle.css" />
-                            <Pane id="fbf" layoutX="478.0" layoutY="77.0" prefHeight="365.0" prefWidth="250.0" styleClass="vehicleType" stylesheets="@adminStyle.css" />
+                            <Pane id="car" layoutX="9.0" layoutY="146.0" prefHeight="250.0" prefWidth="250.0" styleClass="vehicleType" stylesheets="@adminStyle.css" />
+                            <Pane id="bike" layoutX="245.0" layoutY="146.0" prefHeight="250.0" prefWidth="250.0" styleClass="vehicleType" stylesheets="@adminStyle.css" />
+                            <Pane id="fbf" layoutX="500.0" layoutY="146.0" prefHeight="250.0" prefWidth="250.0" styleClass="vehicleType" stylesheets="@adminStyle.css" />
+                        <Label layoutX="108.0" layoutY="99.0" styleClass="VehicleLabel" stylesheets="@adminStyle.css" text="Car" />
+                        <Label layoutX="342.0" layoutY="99.0" styleClass="VehicleLabel" stylesheets="@adminStyle.css" text="Bike" />
+                        <Label layoutX="589.0" layoutY="97.0" styleClass="VehicleLabel" stylesheets="@adminStyle.css" text="4 x 4" />
                      </children>
                   </Pane>
                </children>
             </StackPane>
-        </items>
-      </SplitPane>
+         </children>
+      </VBox>
    </children>
 </GridPane>

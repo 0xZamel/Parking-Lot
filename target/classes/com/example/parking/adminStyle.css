@@ -11,10 +11,10 @@
 
 .WelcomeText {
     -fx-alignment: center;
-    -fx-font-size: 32;
+    -fx-font-size: 33;
     -fx-font-weight: bold;
     -fx-text-fill: #6157ed;
-    -
+    -fx-text-decoration: underline;
 }
 
 .logo {
@@ -67,10 +67,15 @@
 
 
 .stack {
-    -fx-background-color: white;
-
+    -fx-background-color: #ededed;
 }
 
+.homeStack {
+    -fx-background-image: url("images/HomeStack.png");
+    -fx-background-size: 700;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
 
 #car {
     -fx-background-image: url("images/car.png");
