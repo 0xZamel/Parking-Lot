@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="700.0" prefWidth="939.0" styleClass="anchor-pane-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.parking.gui.SignUpPageController">
+    <children>
+        <Label id="signUp_label" stylesheets="@style.css" text="SignUp">
+        </Label>
+        <Pane layoutX="233.0" layoutY="110.0" prefHeight="460.0" prefWidth="480.0" styleClass="formBlock" stylesheets="@style.css" AnchorPane.leftAnchor="233.0" AnchorPane.rightAnchor="234.20000000000005">
+            <children>
+                <VBox layoutX="18.0" layoutY="21.0" prefHeight="416.0" prefWidth="435.0" spacing="10.0" stylesheets="@style.css">
+                    <children>
+                        <VBox prefHeight="50.0" prefWidth="150.0" styleClass="EntryBox_signUp" stylesheets="@style.css">
+                            <children>
+                                <Label id="headings_signUp" stylesheets="@style.css" text="Username" />
+                                <TextField fx:id="usernameField" prefHeight="20.0" prefWidth="250.0" promptText="Username" styleClass="signUp_textarea" stylesheets="@style.css" />
+                            </children>
+                        </VBox>
+                        <VBox styleClass="EntryBox_signUp" stylesheets="@style.css">
+                            <children>
+                                <Label id="headings_signUp" stylesheets="@style.css" text="Password" />
+                                <PasswordField fx:id="passwordField" promptText="Password" styleClass="signUp_textarea" stylesheets="@style.css" />
+                            </children>
+                        </VBox>
+                  <HBox prefHeight="54.0" prefWidth="429.0" spacing="30.0">
+                     <children>
+                        <VBox prefHeight="54.0" prefWidth="206.0" styleClass="EntryBox_signUp" stylesheets="@style.css">
+                           <children>
+                              <Label id="headings_signUp" stylesheets="@style.css" text="License Number:" />
+                              <TextField fx:id="licenseNumberField1" promptText="License Number" styleClass="signUp_textarea" stylesheets="@style.css" />
+                           </children>
+                        </VBox>
+                              <VBox prefHeight="54.0" prefWidth="232.0" styleClass="EntryBox_signUp" stylesheets="@style.css">
+                                  <children>
+                                      <Label id="headings_signUp" stylesheets="@style.css" text="Balance:" />
+                                      <TextField fx:id="licenseNumberField" prefHeight="28.0" prefWidth="208.0" promptText="License Number" styleClass="signUp_textarea" stylesheets="@style.css" />
+                                  </children>
+                              </VBox>
+                     </children>
+                  </HBox>
+                        <VBox prefWidth="150.0" spacing="2.0" stylesheets="@style.css">
+                            <children>
+                                <Label id="headings_signUp" stylesheets="@style.css" text="Add Vehicle" />
+                                <HBox spacing="10" stylesheets="@style.css">
+                                    <ComboBox id="vehicleTypeComboBox" fx:id="vehicleTypeComboBox" promptText="Select Vehicle Type">
+                                        <items>
+                                            <FXCollections fx:factory="observableArrayList">
+                                                <String fx:value="Car" />
+                                                <String fx:value="Truck" />
+                                                <String fx:value="Bike" />
+                                            </FXCollections>
+                                        </items>
+                                    </ComboBox>
+                                    <TextField id="licensePlateField" fx:id="licensePlateField" promptText="Enter License Plate" />
+                                    <Button id="addVehicleBtn" onAction="#handleAddVehicle" text="Add Vehicle" />
+                                </HBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0" stylesheets="@style.css">
+                                    <children>
+                                        <Label id="headings_signUp" stylesheets="@style.css" text="Vehicles List" />
+                                        <ListView id="vehicleListView" fx:id="vehicleListView" prefHeight="77.0" prefWidth="435.0" stylesheets="@style.css" />
+                                    </children>
+                                </VBox>
+                                <Button id="removeVehicleBtn" onAction="#handleRemoveVehicle" stylesheets="@style.css" text="Remove Selected Vehicle" />
+                                <Hyperlink fx:id="loginLink" onAction="#goToLoginPage" stylesheets="@style.css" text="Already have an account?" />
+                            </children>
+                        </VBox>
+                    </children>
+                </VBox>
+            </children>
+        </Pane>
+        <Button id="signUpButton" fx:id="signUpButton" layoutX="33.0" layoutY="110.0" mnemonicParsing="false" onAction="#signUpButtonClicked" styleClass="buttonEff" stylesheets="@style.css" text="SignUp" />
+    </children>
+</AnchorPane>

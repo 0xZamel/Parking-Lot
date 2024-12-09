@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<GridPane prefHeight="633.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="692.0000366210937" minWidth="10.0" prefWidth="198.13336791992188" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="933.6000370025636" minWidth="10.0" prefWidth="757.0666320800781" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="633.0" prefWidth="160.0" spacing="50.0" styleClass="buttons" stylesheets="@adminStyle.css">
+         <children>
+            <Pane prefHeight="72.0" prefWidth="181.0" styleClass="logo" stylesheets="@adminStyle.css" />
+                <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" styleClass="btn" stylesheets="@adminStyle.css" text="HOME" />
+                <Button mnemonicParsing="false" styleClass="btn" stylesheets="@adminStyle.css" text="OWNERS" />
+                <Button mnemonicParsing="false" styleClass="btn" stylesheets="@adminStyle.css" text="SPOTS" />
+                <Button mnemonicParsing="false" styleClass="btn" stylesheets="@adminStyle.css" text="TOTAL AMOUNT" />
+                <Button mnemonicParsing="false" styleClass="btn" stylesheets="@adminStyle.css" text="DISPLAY FEEDBACK" />
+         </children>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="100.0" stylesheets="@adminStyle.css" GridPane.columnIndex="1">
+         <children>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="70.0" prefWidth="783.0" styleClass="headerPane" stylesheets="@adminStyle.css">
+               <children>
+                      <Label alignment="CENTER" layoutX="83.0" layoutY="5.0" prefHeight="66.0" prefWidth="568.0" styleClass="WelcomeText" stylesheets="@adminStyle.css" text="Welcome To Admin Dashboard" />
+                      <Button layoutX="660.0" layoutY="19.0" mnemonicParsing="false" styleClass="Logout-btn" stylesheets="@adminStyle.css" text="LOGOUT" />
+               </children>
+            </AnchorPane>
+            <StackPane prefHeight="549.0" prefWidth="758.0" styleClass="stack" stylesheets="@adminStyle.css">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" styleClass="homeStack" stylesheets="@adminStyle.css" />
+                  <Pane prefHeight="417.0" prefWidth="633.0" styleClass="SpotStack" stylesheets="@adminStyle.css" visible="false">
+                     <children>
+                            <Pane id="car" layoutX="9.0" layoutY="146.0" prefHeight="250.0" prefWidth="250.0" styleClass="vehicleType" stylesheets="@adminStyle.css" />
+                            <Pane id="bike" layoutX="245.0" layoutY="146.0" prefHeight="250.0" prefWidth="250.0" styleClass="vehicleType" stylesheets="@adminStyle.css" />
+                            <Pane id="fbf" layoutX="500.0" layoutY="146.0" prefHeight="250.0" prefWidth="250.0" styleClass="vehicleType" stylesheets="@adminStyle.css" />
+                        <Label layoutX="108.0" layoutY="99.0" styleClass="VehicleLabel" stylesheets="@adminStyle.css" text="Car" />
+                        <Label layoutX="342.0" layoutY="99.0" styleClass="VehicleLabel" stylesheets="@adminStyle.css" text="Bike" />
+                        <Label layoutX="589.0" layoutY="97.0" styleClass="VehicleLabel" stylesheets="@adminStyle.css" text="4 x 4" />
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </children>
+      </VBox>
+   </children>
+</GridPane>

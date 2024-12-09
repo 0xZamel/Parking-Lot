@@ -1,0 +1,94 @@
+.vehicleType {
+    -fx-prefWidth: 190;
+    -fx-prefHeight: 370;
+}
+
+.VehicleLabel {
+    -fx-font-size: 32;
+    -fx-font-weight: bold;
+    -fx-text-fill: black;
+}
+
+.WelcomeText {
+    -fx-alignment: center;
+    -fx-font-size: 32;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6157ed;
+    -
+}
+
+.logo {
+    -fx-background-image: url("images/logo.png");
+    -fx-background-size: 85;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;}
+
+.btn {
+    -fx-pref-height: 10;
+    -fx-pref-width: 130;
+    -fx-border-size: 10;
+    -fx-border-radius: 10;
+    -fx-background-radius: 50;
+    -fx-background-color: white;
+    -fx-padding: 10px 20;
+    -fx-font-size: 0.8em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6157ed;
+    -fx-alignment: center;
+    -fx-letter-spacing: 0.1em;
+    -fx-transition: all 0.3s ease;
+}
+
+.Logout-btn {
+    -fx-pref-height: 5;
+    -fx-pref-width: 80;
+    -fx-border-size: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #6157ed;
+    -fx-border-width: 2;
+    -fx-background-radius: 50;
+    -fx-background-color: white;
+    -fx-padding: 10px 20;
+    -fx-font-size: 0.7em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6157ed;
+    -fx-alignment: center;
+    -fx-letter-spacing: 0.1em;
+    -fx-transition: all 0.3s ease;
+}
+
+.headerPane {
+    -fx-background-color: white;
+}
+
+.buttons {
+    -fx-background-color: #6157ed;
+}
+
+
+.stack {
+    -fx-background-color: white;
+
+}
+
+
+#car {
+    -fx-background-image: url("images/car.png");
+    -fx-background-size: 355;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#bike {
+    -fx-background-image: url("images/bike.png");
+    -fx-background-size: 250;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+
+#fbf {
+    -fx-background-image: url("images/fbf.png");
+    -fx-background-size: 250;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
