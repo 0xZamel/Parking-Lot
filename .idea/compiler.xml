@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Parking" options="--add-exports java.desktop/sun.swing=ALL-UNNAMED" />
+      <module name="Parking" options="--add-exports java.desktop/sun.swing=com.example.parking,ALL-UNNAMED" />
     </option>
   </component>
 </project>
